@@ -78,6 +78,11 @@ const BoatDetail = () => {
 						</article>
 					))}
 				</div>
+				<Link
+					className='addBooking'
+					to={`/bookings/add/${boat._id}`}>
+					Add Booking
+				</Link>
 			</section>
 		</main>
 	);

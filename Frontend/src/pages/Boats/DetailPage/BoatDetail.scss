@@ -10,7 +10,7 @@
 	border-radius: 1rem;
 	.image_wrapper {
 		padding: 5%;
-		
+
 		image {
 			margin-right: auto;
 			width: 40%;
@@ -49,20 +49,18 @@
 		article {
 			display: flex;
 			justify-content: space-between;
-			p{
-				
+			p {
 				font-size: 1.5vw;
 				margin-bottom: 1vh;
-				
+
 				&:nth-of-type(2) {
-						text-align: right;
-						
-					}
-				
-					&:nth-of-type(1) {
-						text-align: left;
-						flex: 1;
-					}
+					text-align: right;
+				}
+
+				&:nth-of-type(1) {
+					text-align: left;
+					flex: 1;
+				}
 			}
 			a {
 				font-size: 1.5vw;
@@ -70,7 +68,6 @@
 				text-decoration: underline;
 				text-align: left;
 				flex: 1;
-				
 			}
 			h4 {
 				margin-bottom: 3vh;
@@ -84,6 +81,24 @@
 					text-align: center;
 				}
 			}
+		}
+	}
+	.addBooking {
+		display: block;
+		margin: 2vh auto;
+		width: 50%;
+		border-radius: 1rem;
+		border: 2px solid rgb(12, 18, 130);
+		font-size: 1.5vw;
+		color: aliceblue;
+		text-align: center;
+		padding-block: 1vh;
+		background-color: rgba(106, 132, 226, 0.234);
+		backdrop-filter: blur(12px);
+		transition: all 300ms linear;
+		&:hover {
+			background-color: rgb(12, 18, 130);
+			border: 2px solid rgb(197, 199, 244);
 		}
 	}
 	color: aliceblue;

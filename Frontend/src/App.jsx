@@ -83,7 +83,7 @@ function App() {
 						element={<AvailableBoats />}
 					/>
 					<Route
-						path='/bookings/add'
+						path='/bookings/add/:boatid'
 						element={<AddNewBooking />}
 					/>
 				</Routes>

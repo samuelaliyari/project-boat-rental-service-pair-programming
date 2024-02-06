@@ -1,0 +1,72 @@
+.addNewBooking {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 90vh;
+	flex-direction: column;
+	width: 100%;
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 2vh;
+		width: 100%;
+
+		input,
+		select {
+			margin: 0 auto;
+			display: block;
+			font-size: 1.5vw;
+			background-color: rgba(2, 60, 110, 0.407);
+			color: rgb(213, 233, 252);
+			padding: 1vh;
+			border-radius: 1rem;
+			border: 2px solid rgba(12, 70, 170, 0.691);
+			backdrop-filter: blur(12px);
+			&::placeholder {
+				color: rgba(165, 207, 246, 0.888);
+			}
+			width: 30%;
+			&:focus {
+				outline: none;
+			}
+			&::file-selector-button {
+				display: inline-block;
+				font-size: 1vw;
+				background-color: rgba(2, 60, 110, 0.407);
+				color: rgb(181, 219, 255);
+				border-radius: 0.6rem;
+				width: 40%;
+				padding: 2%;
+				margin-right: 2vw;
+				border: 2px solid rgb(72, 74, 108);
+			}
+
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+	}
+	button {
+		display: block;
+		font-size: 1.5vw;
+		background-color: rgba(0, 78, 145, 0.407);
+		color: rgb(181, 219, 255);
+		padding: 1vh;
+		border-radius: 1rem;
+		width: 30%;
+		margin-top: 4vh;
+		border: 2px solid rgb(72, 74, 108);
+		backdrop-filter: blur(12px);
+		&:hover {
+			background-color: rgba(12, 18, 130, 0.78);
+			border: 2px solid rgba(197, 199, 244, 0.764);
+		}
+		&:active {
+			background-color: rgba(0, 2, 38, 0.842);
+			border: 2px solid rgba(240, 241, 250, 0.831);
+		}
+	}
+}

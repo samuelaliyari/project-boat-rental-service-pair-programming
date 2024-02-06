@@ -1,8 +1,27 @@
-.boats {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 3vw;
-	padding: 10% 5%;
-	justify-content: center;
-	place-items: center;
+.boatsWrapper {
+	padding: 7.5% 5%;
+	.boats {
+		padding-block: 2.5%;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 3vw;
+		justify-content: center;
+		place-items: center;
+	}
+	.addBoat {
+		display: block;
+		margin: 2vh auto;
+		width: 30%;
+		border-radius: 1rem;
+		border: 2px solid rgb(19, 30, 235);
+		font-size: 1.5vw;
+		color: aliceblue;
+		text-align: center;
+		padding-block: 1vh;
+		transition: all 300ms linear;
+		&:hover {
+			background-color: rgb(12, 18, 130);
+			border: 2px solid rgb(197, 199, 244);
+		}
+	}
 }
