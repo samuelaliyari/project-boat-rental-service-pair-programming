@@ -35,6 +35,16 @@ const BoatDetail = () => {
 		fetchBoat(boatid);
 	}, []);
 
+	const deleteBoat = async () => {
+		const fetchData = await fetch(import.meta.env.VITE_SERVER_LINK + '/boats/delete/' + boat._id, {
+			method: 'DELETE'
+		});
+		const { success, result, error } = await fetchData.json();
+		if (!success) console.log(error);
+		else console.log(result);
+		navigate('/boats'); 
+	} 
+
 	return (
 		<main className='boatDetail'>
 			<div className='image_wrapper'>
@@ -54,6 +64,7 @@ const BoatDetail = () => {
 						<p>Material: {boat?.material}</p>
 						<p>Boat type: {boat?.boatType}</p>
 					</article>
+				<button onClick={() => deleteBoat()}>Delete Boat</button>
 				</section>
 				<h4>Bookings</h4>
 				<div>

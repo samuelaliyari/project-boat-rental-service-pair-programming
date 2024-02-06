@@ -41,6 +41,25 @@
 			width: 100%;
 			font-size: 2vw;
 		}
+		button{
+			display: block;
+			margin: 2vh auto;
+			width: 50%;
+			border-radius: 1rem;
+			border: 2px solid rgb(12, 18, 130);
+			font-size: 1.5vw;
+			color: aliceblue;
+			text-align: center;
+			padding-block: 1vh;
+			background-color: rgba(106, 132, 226, 0.234);
+			backdrop-filter: blur(12px);
+			transition: all 300ms linear;
+	
+			&:hover {
+				background-color: rgb(12, 18, 130);
+				border: 2px solid rgb(255, 0, 0);
+			}
+			}
 	}
 
 	div {
