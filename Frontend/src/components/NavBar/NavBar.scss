@@ -1,0 +1,22 @@
+header {
+	background-color: black;
+	nav {
+		display: flex;
+		justify-content: space-between;
+		padding: 1% 2.5%;
+		a {
+			display: grid;
+			place-items: center;
+			padding: 1%;
+			cursor: pointer;
+			width: 5vw;
+			border-radius: 50%;
+			border: 2px solid white;
+			aspect-ratio: 1/1;
+			img {
+				width: 3.5vw;
+				aspect-ratio: 1/1;
+			}
+		}
+	}
+}
