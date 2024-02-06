@@ -1,0 +1,56 @@
+.bookingCard {
+    border-radius: 0.5rem;
+    background-color: rgba(130, 157, 231, 0.301);
+    backdrop-filter: blur(8px);
+    padding-top: 2.5%;
+    transition: all 400ms linear;
+
+    &:hover {
+        transform: scale(1.05);
+        outline: 3px solid rgb(19, 30, 235);
+    }
+
+    a {
+        div {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            margin-top: 2vh;
+
+            img {
+                border-radius: 0 0 0.5rem 0.5rem ;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        article {
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 2.5%;
+
+            h3 {
+                color: white;
+                margin: 1vh;
+                text-align: left;
+                font-size: 1.2vw;
+
+                &:nth-of-type(2) {
+                    text-align: right;
+                }
+
+                line-height: 200%;
+            }
+        }
+
+        a {
+            color: white;
+            margin: 1vh auto;
+            font-size: 1.2vw;
+            display: inline-block;
+            text-decoration: underline;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

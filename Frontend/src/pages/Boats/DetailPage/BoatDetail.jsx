@@ -37,7 +37,7 @@ const BoatDetail = () => {
 
 	return (
 		<main className='boatDetail'>
-			<div>
+			<div className='image_wrapper'>
 				<img
 					src={'http://localhost:3001/img/' + boat.image}
 					alt=''
