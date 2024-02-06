@@ -68,6 +68,8 @@ const AddNewBoat = () => {
 					id=''>
 					<option disabled>Select boats type</option>
 					<option value='Pedal boat'>Pedal boat</option>
+					<option value='Yacht'>Yacht</option>
+                    <option value='Motor Boat'>Motor Boat</option>
 					<option value='Sail boat'>Sail boat</option>
 					<option value='Hovercraft'>Hovercraft</option>
 					<option value='Ghostship'>Ghostship</option>
