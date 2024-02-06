@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import './Home.scss';
 import { DataContext } from '../../context/Context';
-import defaultBoat from '../../../public/defaultBoat.png';
-import calenderImage from '../../../public/calenderBG.jpeg'
-import availableBG from '../../../public/availableBG.jpeg'
+import calenderImage from '../../../public/calenderBG.jpeg';
+import availableBG from '../../../public/availableBG.jpeg';
 
 import { Link } from 'react-router-dom';
 const Home = () => {
-	const { boats, setBoats, bookings, setBookings, fetchBookings } = useContext(DataContext);
+	const { boats, setBoats, bookings, setBookings, fetchBookings } =
+		useContext(DataContext);
 
 	useEffect(() => {
 		fetchBookings();
@@ -15,7 +15,6 @@ const Home = () => {
 
 	return (
 		<main className='home'>
-			<h2>Boats</h2>
 			<section>
 				{boats.map((boat) => (
 					<Link

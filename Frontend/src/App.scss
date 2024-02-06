@@ -1,18 +1,17 @@
 @font-face {
-	font-family: "lato-bd";
+	font-family: 'lato-bd';
 	src: url(../public/Lato-Bold.ttf);
-};
+}
 
 @font-face {
-	font-family: "lato-rg";
+	font-family: 'lato-rg';
 	src: url(../public/Lato-Regular.ttf);
-};
+}
 
 @font-face {
-	font-family: "lato-tn";
+	font-family: 'lato-tn';
 	src: url(../public/Lato-Thin.ttf);
-};
-
+}
 
 /* ====================================================================
                                 RESET
@@ -24,10 +23,10 @@
 	box-sizing: border-box;
 }
 
-:root{
-	--headline-font: "lato-bd";
-	--main-text-font: "lato-rg";
-	--small-text-font: "lato-tn";
+:root {
+	--headline-font: 'lato-bd';
+	--main-text-font: 'lato-rg';
+	--small-text-font: 'lato-tn';
 }
 
 a {
@@ -40,9 +39,10 @@ img {
 	max-width: 100%;
 }
 
-body{
+body {
 	min-height: 100vh;
-	background: url(../../../public/abstract_bg.jpg) center / cover no-repeat fixed;
-	overflow: hidden;
+	background: url(../../../public/abstract_bg.jpg) center / cover no-repeat
+		fixed;
+	overflow-x: hidden;
 	font-family: var(--main-text-font);
 }
