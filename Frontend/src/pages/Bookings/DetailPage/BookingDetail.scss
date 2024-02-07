@@ -1,79 +1,114 @@
 .bookingDetail {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3vw;
-    padding: 2.5%;
-    background-color: rgba(130, 157, 231, 0.301);
-    backdrop-filter: blur(8px);
-    margin: 2.5%;
-    margin-top: 2.5%;
-    border-radius: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 3vw;
+	padding: 2.5%;
+	background-color: rgba(130, 157, 231, 0.301);
+	backdrop-filter: blur(8px);
+	border-radius: 1rem;
+	margin: 5% auto;
+	width: 80%;
+	.image_wrapper {
+		padding: 5%;
+		image {
+			margin-right: auto;
+			width: 40%;
+			aspect-ratio: 1/1;
+		}
+	}
 
-    .image_wrapper {
-        padding: 5%;
+	section {
+		padding: 0;
 
-        image {
-            margin-right: auto;
-            width: 40%;
-            aspect-ratio: 1/1;
-        }
-    }
+		h3 {
+			font-size: 2vw;
+			margin-bottom: 2vh;
+		}
 
-    section {
-        padding: 5% 0;
+		section {
+			display: flex;
+			flex-direction: column;
 
-        h3 {
-            font-size: 2vw;
-            margin-bottom: 2vh;
-        }
+			article {
+				margin-bottom: 2vh;
+				margin-top: 1vh;
+				display: flex;
+				justify-content: space-between;
 
-        section {
-            display: flex;
-            flex-direction: column;
+				p {
+					font-size: 1.5vw;
+				}
+			}
+		}
 
-            article {
-                margin-bottom: 2vh;
-                margin-top: 1vh;
-                display: flex;
-                justify-content: space-between;
+		a {
+			text-decoration: underline;
+			h4 {
+				margin-bottom: 3vh;
+				text-align: center;
+				width: 100%;
+				font-size: 2vw;
+			}
+		}
+		button {
+			display: block;
+			margin: 2vh auto;
+			width: 50%;
+			border-radius: 1rem;
+			border: 2px solid rgb(12, 18, 130);
+			font-size: 1.5vw;
+			color: aliceblue;
+			text-align: center;
+			padding-block: 1vh;
+			background-color: rgba(106, 132, 226, 0.234);
+			backdrop-filter: blur(12px);
+			transition: all 300ms linear;
 
-                p {
-                    font-size: 1.5vw;
-                }
-            }
-        }
+			&:hover {
+				background-color: rgb(12, 18, 130);
+				border: 2px solid rgb(255, 0, 0);
+			}
+		}
+		.editBooking {
+			display: block;
+			margin: 2vh auto;
+			width: 50%;
+			border-radius: 1rem;
+			border: 2px solid rgb(12, 18, 130);
+			font-size: 1.5vw;
+			color: aliceblue;
+			text-align: center;
+			padding-block: 1vh;
+			background-color: rgba(106, 132, 226, 0.234);
+			backdrop-filter: blur(12px);
+			transition: all 300ms linear;
+			text-decoration: none;
+			&:hover {
+				background-color: rgb(12, 18, 130);
+				border: 2px solid rgb(157, 255, 0);
+			}
+		}
+	}
 
-        a{
-            text-decoration: underline;
-            h4 {
-                text-align: center;
-                width: 100%;
-                font-size: 2vw;
-            }
-        }
-    }
+	div {
+		text-align: center;
+		padding-block: 5%;
 
-    div {
-        text-align: center;
-        padding-block: 5%;
+		article {
+			display: flex;
+			justify-content: space-between;
 
-        article {
-            display: flex;
-            justify-content: space-between;
+			h4 {
+				margin-bottom: 3vh;
 
-            h4 {
-                margin-bottom: 3vh;
-            
-                text-align: left;
-                font-size: 1.5vw;
-                &:nth-of-type(even){
-                    text-align: right;
-                }
-            }
+				text-align: left;
+				font-size: 1.5vw;
+				&:nth-of-type(even) {
+					text-align: right;
+				}
+			}
+		}
+	}
 
-
-        }
-    }
-
-    color: aliceblue;
+	color: aliceblue;
 }

@@ -3,12 +3,14 @@ import { status } from "./status.js";
 
 export const editBooking = async (req, res) => {
     const editedBookingObj = req.body;
+    console.log(req.body);
     try {
         const editedBooking = await services.editOne('bookings', editedBookingObj);
         res.status(status.ACCEPTED).json({
             success: true, result: editedBooking
         });
     } catch (error) {
+        console.log(error)
         res.status(status.INTERNAL_SERVER_ERROR).json({
             success: false, error: error
         });

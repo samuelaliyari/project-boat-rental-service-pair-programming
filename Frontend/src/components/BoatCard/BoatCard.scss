@@ -12,7 +12,7 @@
 		div {
 			width: 100%;
 			aspect-ratio: 3 / 2;
-			margin-bottom: 1vh;
+			margin-bottom: 3vh;
 			img {
 				border-radius: 0.5rem 0.5rem 0 0;
 				width: 100%;
@@ -24,9 +24,10 @@
 			display: flex;
 			justify-content: space-between;
 			padding-inline: 2.5%;
+			margin-bottom: 2vh;
 			h3 {
 				color: white;
-				margin: 1vh;
+				// margin: 1vh;
 				text-align: left;
 				font-size: 1.2vw;
 				&:nth-of-type(2) {
@@ -38,11 +39,13 @@
 		p {
 			color: white;
 			margin: 1vh auto;
+			margin-top: 0;
 			font-size: 1.2vw;
 			display: inline-block;
 			text-decoration: underline;
 			text-align: center;
 			width: 100%;
+			line-height: 100%;
 		}
 	}
 }

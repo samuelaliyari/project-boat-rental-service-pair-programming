@@ -27,7 +27,7 @@ const BoatCard = ({ boat }) => {
 					<h3>Production Year: </h3>
 					<h3>{boat.productionYear}</h3>
 				</article>
-				<p >Bookings</p>
+				<p>Bookings</p>
 			</Link>
 		</section>
 	);

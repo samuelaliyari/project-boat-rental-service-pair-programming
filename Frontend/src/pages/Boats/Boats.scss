@@ -1,52 +1,52 @@
 .boatsWrapper {
-	padding: 7.5% 5%;
+	padding: 7.5% 10%;
 	color: white;
 
-	article{
+	.dateInput {
 		display: flex;
-
+		margin-bottom: 5%;
+		padding: 2.5%;
+		justify-content: space-between;
+		gap: 4vw;
 		label {
-				display: flex;
-				width: 100%;
-				margin-left: auto;
-				font-size: 1.5vw;
-				color: rgb(213, 233, 252);
-				align-items: center;
-				justify-content: space-around;
-			}
-		
-			input{
-				
-				display: block;
-				font-size: 1.5vw;
-				background-color: rgba(2, 60, 110, 0.407);
-				color: rgb(213, 233, 252);
-				padding: 1vh;
-				border-radius: 1rem;
-				border: 2px solid rgba(12, 70, 170, 0.691);
-				backdrop-filter: blur(12px);
-		
-				&::placeholder {
-					color: rgba(165, 207, 246, 0.888);
-				}
+			display: flex;
+			width: 100%;
+			font-size: 1.5vw;
+			color: rgb(213, 233, 252);
+			align-items: center;
+			justify-content: center;
+		}
 
-				&:focus {
-					outline: none;
-				}
+		input {
+			display: block;
+			font-size: 1.5vw;
+			background-color: rgba(2, 60, 110, 0.407);
+			color: rgb(213, 233, 252);
+			padding: 1vh;
+			border-radius: 1rem;
+			border: 2px solid rgba(12, 70, 170, 0.691);
+			backdrop-filter: blur(12px);
+			margin-left: 2vw;
+
+			&::placeholder {
+				color: rgba(165, 207, 246, 0.888);
 			}
-		
-			input[type='date'] {
-				margin-top: 1vh;
-				width: 70%;
-				margin-left: 2vw;
-				margin-right: auto;
+
+			&:focus {
+				outline: none;
 			}
+		}
+
+		input[type='date'] {
+			margin-top: 1vh;
+			width: 70%;
+		}
 	}
 
 	.boats {
 		padding-block: 2.5%;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 3vw;
 		justify-content: center;
 		place-items: center;

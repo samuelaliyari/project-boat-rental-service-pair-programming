@@ -4,6 +4,8 @@ import { DataContext } from '../../../context/Context';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const BoatDetail = () => {
+	const { boats, setBoats, bookings, setBookings, fetchBoats } =
+		useContext(DataContext);
 	const [boat, setBoat] = useState({});
 	const [boatBookings, setBoatBookings] = useState([]);
 	const navigate = useNavigate();
@@ -36,14 +38,18 @@ const BoatDetail = () => {
 	}, []);
 
 	const deleteBoat = async () => {
-		const fetchData = await fetch(import.meta.env.VITE_SERVER_LINK + '/boats/delete/' + boat._id, {
-			method: 'DELETE'
-		});
+		const fetchData = await fetch(
+			import.meta.env.VITE_SERVER_LINK + '/boats/delete/' + boat._id,
+			{
+				method: 'DELETE',
+			},
+		);
 		const { success, result, error } = await fetchData.json();
 		if (!success) console.log(error);
 		else console.log(result);
-		navigate('/boats'); 
-	} 
+		fetchBoats();
+		navigate('/boats');
+	};
 
 	return (
 		<main className='boatDetail'>
@@ -54,7 +60,7 @@ const BoatDetail = () => {
 				/>
 			</div>
 			<section>
-				<h3>Name: {boat?.name}</h3>
+				<h3>{boat?.name}</h3>
 				<section>
 					<article>
 						<p>S/N: {boat?.serialNumber}</p>
@@ -64,7 +70,7 @@ const BoatDetail = () => {
 						<p>Material: {boat?.material}</p>
 						<p>Boat type: {boat?.boatType}</p>
 					</article>
-				<button onClick={() => deleteBoat()}>Delete Boat</button>
+					<button onClick={() => deleteBoat()}>Delete Boat</button>
 				</section>
 				<h4>Bookings</h4>
 				<div>

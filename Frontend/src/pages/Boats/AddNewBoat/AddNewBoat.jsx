@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './AddNewBoat.scss';
+import { useNavigate } from 'react-router-dom';
+import { DataContext } from '../../../context/Context';
 
 const AddNewBoat = () => {
 	const [newBoat, setNewBoat] = useState({
@@ -11,6 +13,8 @@ const AddNewBoat = () => {
 		boatType: '',
 		available: true,
 	});
+	const { fetchBoats } = useContext(DataContext);
+	const navigate = useNavigate();
 
 	const addNewBoat = async () => {
 		const formData = new FormData();
@@ -30,6 +34,8 @@ const AddNewBoat = () => {
 		const { success, result, error } = await fetchData.json();
 		if (!success) console.log(error);
 		else console.log(result);
+		fetchBoats();
+		navigate('/boats');
 	};
 
 	return (

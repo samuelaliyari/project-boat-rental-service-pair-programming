@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { DataContext } from '../../context/Context';
 
 const BookingCard = ({ booking }) => {
-
 	const { fetchBookings } = useContext(DataContext);
 
 	const [boat, setBoat] = useState({});
@@ -28,13 +27,18 @@ const BookingCard = ({ booking }) => {
 	return (
 		<section className='bookingCard'>
 			<Link to={`/booking/${booking._id}`}>
-				
 				<article>
-					<h3>{booking.firstName} {booking.lastName}</h3>
+					<h3>
+						{booking.firstName} {booking.lastName}
+					</h3>
 				</article>
 				<article>
-					<h3>Booking Schedule: </h3>
-					<h3>{booking.startDate.slice(0, 10)} - {booking.endDate.slice(0, 10)}</h3>
+					<h3>Start Date: </h3>
+					<h3>{booking.startDate.slice(0, 10)}</h3>
+				</article>
+				<article>
+					<h3>End Date: </h3>
+					<h3> {booking.endDate.slice(0, 10)}</h3>
 				</article>
 				<article>
 					<h3>Email: </h3>

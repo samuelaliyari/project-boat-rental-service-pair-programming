@@ -1,8 +1,8 @@
 .bookings {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3vw;
-    padding: 10% 5%;
-    justify-content: center;
-    place-items: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+	gap: 3vw;
+	padding: 7.5%;
+	justify-content: center;
+	place-items: center;
 }

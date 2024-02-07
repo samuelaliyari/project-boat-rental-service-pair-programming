@@ -5,46 +5,50 @@ import { DataContext } from '../../context/Context';
 import { Link } from 'react-router-dom';
 
 const AvailableBoats = () => {
+	const { boats, fetchBoats, bookings } = useContext(DataContext);
 
-	const { boats, setBoats, fetchBoats, fetchBookings, bookings } = useContext(DataContext);
-
-	const [ startDate, setStartDate ] = useState('');
-	const [ endDate, setEndDate ] = useState('');
-	const [ availableBoatIds, setAvailableBoatIds ] = useState([]); 
-	const [ availableBoats, setAvailableBoats ] = useState([]);
-
-	// bookings filtern, die zu dem zeitfenster passen
-	// boatId aus den bookings nehmen
-	// startDate und endDate < startDate || startDate > endDate
-	// --> boatId in availableBoatIds hinzugefügt
-	// --> mit availableBoatIds availableBoats filtern
+	const [startDate, setStartDate] = useState('');
+	const [endDate, setEndDate] = useState('');
+	const [availableBoats, setAvailableBoats] = useState([]);
 
 	const findUnavailableBoats = (startDate, endDate) => {
 		const matchedBookings = bookings.filter((booking) => {
-			if((new Date(booking.startDate).getTime() <= new Date(startDate).getTime() 
-			&& new Date(booking.endDate).getTime() >= new Date(startDate).getTime()) 
-			|| (new Date(booking.startDate).getTime() <= new Date(endDate).getTime() 
-			&& new Date(booking.endDate).getTime() >= new Date(endDate).getTime()))
-			{
+			if (
+				(new Date(booking.startDate).getTime() <=
+					new Date(startDate).getTime() &&
+					new Date(booking.endDate).getTime() >=
+						new Date(startDate).getTime()) ||
+				(new Date(booking.startDate).getTime() <=
+					new Date(endDate).getTime() &&
+					new Date(booking.endDate).getTime() >=
+						new Date(endDate).getTime())
+			) {
 				return true;
-			}else{
+			} else {
 				return false;
 			}
 		});
-		console.log(matchedBookings);
-	}
+		const unavailableBoats = matchedBookings.map(
+			(booking) => booking.boatId,
+		);
+
+		const availableBoatsByDate = boats.filter(
+			(boat) => !unavailableBoats.includes(boat._id),
+		);
+		setAvailableBoats(availableBoatsByDate);
+	};
 
 	useEffect(() => {
 		fetchBoats();
-	},[]);
+	}, []);
 
 	useEffect(() => {
 		setAvailableBoats(boats);
-	},[boats]);
+	}, [boats]);
 
 	useEffect(() => {
-		findUnavailableBoats(startDate, endDate)
-	}, [endDate])
+		findUnavailableBoats(startDate, endDate);
+	}, [endDate]);
 
 	const today = new Date().toISOString().slice(0, 10);
 	const minStartDay = today.replace(
@@ -58,7 +62,7 @@ const AvailableBoats = () => {
 
 	return (
 		<main className='boatsWrapper'>
-			<article>
+			<article className='dateInput'>
 				<label>
 					Start date:{' '}
 					<input

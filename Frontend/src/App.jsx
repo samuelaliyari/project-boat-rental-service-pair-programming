@@ -11,6 +11,7 @@ import Home from './pages/Home/Home';
 import { Route, Routes } from 'react-router-dom';
 import { DataContext } from './context/Context';
 import AvailableBoats from './pages/Boats/Boats';
+import EditBooking from './pages/Bookings/Edit/EditBooking';
 
 function App() {
 	const [boats, setBoats] = useState([]);
@@ -52,7 +53,7 @@ function App() {
 					bookings,
 					setBookings,
 					fetchBookings,
-					fetchBoats
+					fetchBoats,
 				}}>
 				<Routes>
 					<Route
@@ -86,6 +87,10 @@ function App() {
 					<Route
 						path='/bookings/add/:boatid'
 						element={<AddNewBooking />}
+					/>
+					<Route
+						path='/bookings/edit/:bookingid'
+						element={<EditBooking />}
 					/>
 				</Routes>
 			</DataContext.Provider>

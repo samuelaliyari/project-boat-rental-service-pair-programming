@@ -26,7 +26,7 @@ bookingsRouter.get('/boat_bookings/:boatId', controller.getAllBookingsByBoatId);
 
 bookingsRouter.delete('/delete/:bookingId', controller.deleteBooking);
 
-bookingsRouter.put('/edit', controller.editBooking);
+bookingsRouter.put('/edit', upload.none(), controller.editBooking);
 
 bookingsRouter.post('/add', upload.none(), controller.addNewBooking);
 
