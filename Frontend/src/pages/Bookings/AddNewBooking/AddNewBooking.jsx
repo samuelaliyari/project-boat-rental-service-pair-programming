@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './AddNewBooking.scss';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { DataContext } from '../../../context/Context';
 const AddNewBooking = () => {
+	const { fetchBookings } = useContext(DataContext);
 
+	const navigate = useNavigate();
 	const [newBooking, setNewBooking] = useState({
 		firstName: '',
 		lastName: '',
 		phone: '',
 		email: '',
 		startDate: '',
-		endDate:'',
+		endDate: '',
 	});
 
 	const today = new Date().toISOString().slice(0, 10);
@@ -33,42 +36,66 @@ const AddNewBooking = () => {
 		formData.append('startDate', newBooking.startDate);
 		formData.append('endDate', newBooking.endDate);
 		formData.append('boatId', boatid);
-		const fetchNewBooking = await fetch(import.meta.env.VITE_SERVER_LINK + '/bookings/add', {
-			method: 'POST',
-			body: formData
-		});
+		const fetchNewBooking = await fetch(
+			import.meta.env.VITE_SERVER_LINK + '/bookings/add',
+			{
+				method: 'POST',
+				body: formData,
+			},
+		);
 		const { success, result, error } = await fetchNewBooking.json();
-		if(!success) console.log(error);
+		if (!success) console.log(error);
 		else console.log(result);
+		fetchBookings();
+		navigate('/bookings');
 	};
 
 	return (
 		<main className='addNewBooking'>
 			<form>
 				<input
-					onChange={(e) => setNewBooking({...newBooking, firstName: e.target.value})}
+					onChange={(e) =>
+						setNewBooking({
+							...newBooking,
+							firstName: e.target.value,
+						})
+					}
 					type='text'
 					placeholder='Firstname'
 				/>
 				<input
-					onChange={(e) => setNewBooking({...newBooking, lastName: e.target.value})}
+					onChange={(e) =>
+						setNewBooking({
+							...newBooking,
+							lastName: e.target.value,
+						})
+					}
 					type='text'
 					placeholder='Lastname'
 				/>
 				<input
-					onChange={(e) => setNewBooking({...newBooking, phone: e.target.value})}
+					onChange={(e) =>
+						setNewBooking({ ...newBooking, phone: e.target.value })
+					}
 					type='number'
 					placeholder='Phonenumber'
 				/>
 				<input
-					onChange={(e) => setNewBooking({...newBooking, email: e.target.value})}
+					onChange={(e) =>
+						setNewBooking({ ...newBooking, email: e.target.value })
+					}
 					type='email'
 					placeholder='e.g. john.doe@mail.com'
 				/>
 				<label>
 					Start date:{' '}
 					<input
-						onChange={(e) => setNewBooking({...newBooking, startDate: e.target.value})}
+						onChange={(e) =>
+							setNewBooking({
+								...newBooking,
+								startDate: e.target.value,
+							})
+						}
 						type='date'
 						min={minStartDay}
 					/>
@@ -76,7 +103,12 @@ const AddNewBooking = () => {
 				<label>
 					End date:{' '}
 					<input
-						onChange={(e) => setNewBooking({...newBooking, endDate: e.target.value})}
+						onChange={(e) =>
+							setNewBooking({
+								...newBooking,
+								endDate: e.target.value,
+							})
+						}
 						type='date'
 						min={minEndDay}
 					/>
