@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { DataContext } from '../../../context/Context';
 
 const EditBooking = () => {
+	
 	const { fetchBookings } = useContext(DataContext);
 	const [editedBooking, setEditedBooking] = useState({
 		firstName: '',
@@ -13,6 +14,7 @@ const EditBooking = () => {
 		startDate: '',
 		endDate: '',
 	});
+
 	const { bookingid } = useParams();
 	const today = new Date().toISOString().slice(0, 10);
 	const minStartDay = today.replace(
@@ -99,7 +101,7 @@ const EditBooking = () => {
 							phone: e.target.value,
 						})
 					}
-					type='number'
+					type='tel'
 					placeholder='Phonenumber'
 				/>
 				<input
