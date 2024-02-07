@@ -27,7 +27,7 @@ const BoatCard = ({ boat }) => {
 					<h3>Production Year: </h3>
 					<h3>{boat.productionYear}</h3>
 				</article>
-				<Link to={`/boat/${boat._id}`}>Bookings</Link>
+				<p >Bookings</p>
 			</Link>
 		</section>
 	);

@@ -11,6 +11,13 @@
 		gap: 2vh;
 		width: 100%;
 
+		label{
+			width: 30%;
+			margin: 0 auto;
+			font-size: 1.5vw;
+			color: rgb(213, 233, 252);
+		}
+
 		input,
 		select {
 			margin: 0 auto;
@@ -47,7 +54,14 @@
 			}
 			-webkit-appearance: none;
 			-moz-appearance: none;
+
 		}
+		input[type='date']{
+			margin-top: 1vh;
+			width: 100%;
+		}
+
+		
 	}
 	button {
 		display: block;

@@ -38,8 +38,8 @@ const Home = () => {
 				</Link>
 				<Link to='/boats/available'>
 					<h2>
-						Available Boats (
-						{boats.filter((boat) => boat.available === true).length}
+						All Boats (
+						{boats.length}
 						)
 					</h2>
 					<img

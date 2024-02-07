@@ -52,6 +52,7 @@ function App() {
 					bookings,
 					setBookings,
 					fetchBookings,
+					fetchBoats
 				}}>
 				<Routes>
 					<Route
